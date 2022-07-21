@@ -61,6 +61,5 @@ RUN chmod +x /opt/glpi-alpine.sh
 WORKDIR /root
 EXPOSE 80
 VOLUME ["/var/www/localhost/htdocs"]
-#CMD ["httpd", "-D", "FOREGROUND"]
 ENTRYPOINT ["/opt/glpi-alpine.sh"]
 
