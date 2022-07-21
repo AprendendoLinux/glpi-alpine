@@ -50,7 +50,8 @@ RUN \
 	\
 	rm /var/cache/apk/* && \
 	ln -sf /dev/stdout /var/log/apache2/access.log && \
-	ln -sf /dev/stderr /var/log/apache2/error.log
+	ln -sf /dev/stderr /var/log/apache2/error.log && \
+	rm -rf /var/www/localhost/htdocs/*
 
 COPY httpd.conf /etc/apache2/
 COPY .bashrc /root/
