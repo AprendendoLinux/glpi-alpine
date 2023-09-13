@@ -136,3 +136,5 @@ Para suporte comercial, entre em contato por [e-mail](mailto:henrique@henrique.t
 <h4>Acesse meu site:</h4>
 
 <https://www.henrique.tec.br>
+
+Fechou!
