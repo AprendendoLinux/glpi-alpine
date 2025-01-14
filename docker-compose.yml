@@ -14,7 +14,7 @@ services:
     - "3306:3306"
   
   glpi:
-    image: aprendendolinux/glpi-alpine
+    image: aprendendolinux/glpi-alpine:latest
     restart: always
     depends_on:
       - mariadb
