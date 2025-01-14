@@ -16,7 +16,7 @@ then
 		if [ -z "$(ls -A /var/www/localhost/htdocs)" ]; then
 			echo "Diretorio vazio, nada a fazer"
 		else
-			php81 /opt/default_upload_max_filesize.php
+			sleep 2 && php81 /opt/default_upload_max_filesize.php
 		fi
 
 	else
@@ -26,7 +26,7 @@ then
 		if [ -z "$(ls -A /var/www/localhost/htdocs)" ]; then
 			echo "Diretorio vazio, nada a fazer"
 		else
-			php81 /opt/change_upload_max_filesize.php
+			sleep 2 && php81 /opt/change_upload_max_filesize.php
 		fi
 
 fi
