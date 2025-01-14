@@ -43,6 +43,7 @@ Esse comando sobe o **MariaDB Server** com a senha de root **_senhaderootmariadb
 ~~~bash
 docker run -d --name='glpi' \
      --hostname='glpi' \
+     --link='mariadb:mariadb' \
      -e TIMEZONE='America/Sao_Paulo' \
      -e VERSION='10.0.17' \
      -e UPLOAD_MAX_FILESIZE='50M' \
