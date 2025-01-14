@@ -1,9 +1,6 @@
-FROM alpine
-
-ADD https://php.hernandev.com/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+FROM alpine:3.16.1
 
 RUN \
-	echo "https://php.hernandev.com/v3.15/php-8.1" >> /etc/apk/repositories && \
 	mkdir -p /var/www/html && \
 	\
 	apk update && apk upgrade && apk add \
@@ -46,6 +43,7 @@ RUN \
 	php81-fileinfo \
 	php81-exif \
 	php81-sodium \
+	php81-phar \
 	php81-opcache && \
 	\
 	rm /var/cache/apk/* && \
@@ -54,6 +52,7 @@ RUN \
 	rm -rf /var/www/localhost/htdocs/*
 
 COPY httpd.conf /etc/apache2/
+COPY glpi.conf /etc/apache2/conf.d/
 COPY .bashrc /root/
 COPY glpi-alpine.sh change_upload_max_filesize.php default_upload_max_filesize.php /opt/
 RUN chmod +x /opt/glpi-alpine.sh
@@ -62,4 +61,3 @@ WORKDIR /root
 EXPOSE 80
 VOLUME ["/var/www/localhost/htdocs"]
 ENTRYPOINT ["/opt/glpi-alpine.sh"]
-
