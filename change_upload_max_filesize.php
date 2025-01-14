@@ -16,7 +16,7 @@ if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-$sql = "UPDATE $dbdefault.glpi_configs SET value = $valor WHERE glpi_configs.id = 227";
+$sql = "UPDATE $dbdefault.glpi_configs SET value = $valor WHERE glpi_configs.name = 'document_max_size'";
 
 if(mysqli_query($link, $sql)){
     echo "Records were updated successfully.";
