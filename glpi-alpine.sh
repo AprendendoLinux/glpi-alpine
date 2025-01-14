@@ -6,6 +6,7 @@
 if [[ -z "$TIMEZONE" ]]; then echo "O TIMEZONE nao esta definido"; 
 	else 
 		echo "date.timezone = \"$TIMEZONE\"" >> /etc/php81/php.ini
+		echo "session.cookie_httponly = On" >> /etc/php81/php.ini
 		ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 fi
 
