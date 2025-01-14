@@ -43,9 +43,8 @@ Esse comando sobe o **MariaDB Server** com a senha de root **_senhaderootmariadb
 ~~~bash
 docker run -d --name='glpi' \
      --hostname='glpi' \
-     --link='mariadb:mariadb' \
      -e TIMEZONE='America/Sao_Paulo' \
-     -e VERSION='10.0.2' \
+     -e VERSION='10.0.17' \
      -e UPLOAD_MAX_FILESIZE='50M' \
      -e POST_MAX_FILESIZE='30M' \
      -v glpi:/var/www/localhost/htdocs \
@@ -64,10 +63,7 @@ POST_MAX_FILESIZE | Tamanho máximo do post (o padrão é 8 megas)
 
 Também é possível iniciar a partir de um arquivo **docker-composer.yml**. Segue o conteúdo abaixo:
 ~~~~composer
-version: "3.7"
-
 services:
-
   mariadb:
     image: mariadb:latest
     restart: always
@@ -87,12 +83,10 @@ services:
     restart: always
     depends_on:
       - mariadb
-    links:
-      - "mariadb:mariadb"
     container_name: glpi
     environment:
       TIMEZONE: "America/Sao_Paulo"
-      VERSION: 10.0.2
+      VERSION: 10.0.17
       UPLOAD_MAX_FILESIZE: 100M
       POST_MAX_FILESIZE: 50M
     volumes:
