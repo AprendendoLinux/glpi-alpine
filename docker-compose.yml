@@ -1,7 +1,4 @@
-version: "3.7"
-
 services:
-
   mariadb:
     image: mariadb:latest
     restart: always
@@ -26,7 +23,7 @@ services:
     container_name: glpi
     environment:
       TIMEZONE: "America/Sao_Paulo"
-      VERSION: 10.0.2
+      VERSION: 10.0.17
       UPLOAD_MAX_FILESIZE: 100M
       POST_MAX_FILESIZE: 50M
     volumes:
